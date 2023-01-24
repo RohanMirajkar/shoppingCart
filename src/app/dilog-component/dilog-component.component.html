@@ -1,0 +1,36 @@
+<h3 class="text-primary">Enter Product Details</h3>
+<mat-dialog-content class="mat-typography">
+  
+  <form [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Product Name</mat-label>
+        <input type="text" matInput placeholder="Product Name" formControlName="productName">
+        <mat-error *ngIf="true">Product Name is Required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-label class="d-block mb-1">Product Image</mat-label>
+     <input type="file" formControlName="productImage" class="border rounded">
+     <small *ngIf="!myForm.get('productImage')!.valid && myForm.get('productImage')!.touched">
+      <mat-error *ngIf="myForm.get('productImage')?.errors?.['required']">Product Image is Required...</mat-error>
+      <mat-error *ngIf="myForm.get('productImage')?.errors?.['extension']">Image type should be jpeg , gif or Png</mat-error>
+     </small>
+     
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+        <mat-label>Product Prise</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="0" formControlName="productPrice">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+    <button type="submit" class="btn btn-primary w-100" [disabled]="!myForm.valid">Submit</button>
+  </form>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close  class="w-100 border">Cancel</button>
+</mat-dialog-actions>

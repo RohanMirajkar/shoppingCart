@@ -1,0 +1,17 @@
+<mat-card class="border rounded mb-2">
+    <mat-card-content>
+        <img [src]="product.img" [alt]="product.name" class="img-fluid border w-100 p-1" aria-placeholder="abc">
+        <div class="product-details text-center">
+            <h6 class="d-inline-block">{{product.name}}</h6>
+            <h6 class="m-0">{{product.price * product.qunt| currency}}</h6>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <button class="mybtn" mat-mini-fab (click)="incrementItem(product)">+</button>
+            <p class="mx-2 mt-3">{{product.qunt}}</p>
+            <button class="mybtn" mat-mini-fab (click)="decrementItem(product)">-</button>
+        </div>
+        <div class="text-center">
+            <button mat-raised-button class="w-75 addProductBtn" (click)="addToBag(product)">Add to Bag</button>
+        </div>
+    </mat-card-content>
+</mat-card>

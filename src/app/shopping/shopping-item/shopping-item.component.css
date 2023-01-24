@@ -1,0 +1,17 @@
+img{
+    height: 200px;
+}
+.mybtn{
+    border-radius: 50%;
+}
+.addProductBtn,.mybtn{
+    background-color: #007bff;
+    color: white;
+}
+.mybtn:hover:hover,.addProductBtn:hover{
+    color: #007bff;
+    background-color: white;
+}
+p{
+    font-size: 25px;
+}

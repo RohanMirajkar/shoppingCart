@@ -1,0 +1,31 @@
+<mat-toolbar class="bg-primary text-white justify-content-between">
+        <div class="d-flex ">
+         <button mat-icon-button (click)="sidenav.toggle()"> 
+            <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+             <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+        </button>
+          EA-16
+        </div>
+        <button mat-button class="btn text-primary bg-white mr-3" (click)="openDialog()">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>BUY NOW</span>
+        </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" opened class="bg-primary" #sidenav="matSidenav">
+        <button mat-button class="menu-button w-100 d-flex align-items-center justify-content-start" (click)="sidenav.toggle()">
+            <mat-icon class="mr-2">home</mat-icon>
+            <span>Home</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content class="mainContent mat-elevation-z4 p-3">
+        <div>
+            <app-shopping></app-shopping>
+            <br><br>
+            <app-bag></app-bag>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
